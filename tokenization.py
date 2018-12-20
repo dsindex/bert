@@ -137,6 +137,7 @@ def convert_by_vocab(vocab, items):
   """Converts a sequence of [tokens|ids] using the vocab."""
   output = []
   for item in items:
+    if not item.isdigit() and item not in vocab: item = '[UNK]'
     output.append(vocab[item])
   return output
 
@@ -170,8 +171,11 @@ class FullTokenizer(object):
   def tokenize(self, text):
     split_tokens = []
     for token in self.basic_tokenizer.tokenize(text):
+      '''
       for sub_token in self.wordpiece_tokenizer.tokenize(token):
         split_tokens.append(sub_token)
+      '''
+      split_tokens.append(token)
 
     return split_tokens
 

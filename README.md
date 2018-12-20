@@ -1,3 +1,17 @@
+# Pre-training word-based BERT
+
+### Modification
+
+- modify tokenization.py
+- prepare vocab.txt from glove.6B.300d.txt (glove vectors)
+  - lowercased(==uncased)
+- add scripts
+  - create_pretraining_data.bash
+    - do_lower_case=True
+  - run_pretraining.bash
+
+----
+
 # BERT
 
 **\*\*\*\*\* New November 23rd, 2018: Un-normalized multilingual model + Thai +

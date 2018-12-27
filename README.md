@@ -3,12 +3,40 @@
 ### Modification
 
 - modify tokenization.py
+  - whitespace tokenization only
+  - exception handling for convert_by_vocab()
 - prepare vocab.txt from glove.6B.300d.txt (glove vectors)
   - lowercased(==uncased)
 - add scripts
   - create_pretraining_data.bash
     - do_lower_case=True
   - run_pretraining.bash
+
+### How to train
+
+- download wiki data
+  - https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2
+
+- extract text
+  - https://github.com/attardi/wikiextractor
+  ```
+  $ cd data
+  $ git clone https://github.com/attardi/wikiextractor
+  $ cd wikiextractor
+  $ python WikiExtractor.py -o ../output < ../enwiki-latest-pages-articles.xml
+  ```
+
+- create pretraining data
+```
+$ ./create_pretraining_data.bash
+```
+
+- run pretraining
+```
+$ mkdir data/tfrecord
+$ cp -rf data/output/*/*.tfrecord data/tfrecord/
+$ ./run_pretraining.bash
+```
 
 ----
 

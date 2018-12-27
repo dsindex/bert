@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
-in_file=./data/input.txt.tfrecord
-out_dir=./data/input.200k.out.1m-step
+in_file=./data/tfrecord/*.tfrecord
+out_dir=./data/engwiki.1m-step
 rm -rf ${out_dir}
 cfg_file=./data/bert_config.json
 python run_pretraining.py \
@@ -11,7 +11,7 @@ python run_pretraining.py \
     --do_train=True \
     --do_eval=True \
     --bert_config_file=${cfg_file} \
-    --train_batch_size=128 \
+    --train_batch_size=8 \
     --max_seq_length=128 \
     --max_predictions_per_seq=20 \
     --num_train_steps=1000000 \

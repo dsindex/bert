@@ -33,8 +33,6 @@ $ ./create_pretraining_data.bash
 
 - run pretraining
 ```
-$ mkdir data/tfrecord
-$ cp -rf data/output/*/*.tfrecord data/tfrecord/
 $ ./run_pretraining.bash
 ```
 

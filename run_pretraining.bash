@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-in_file=./data/tfrecord/*.tfrecord
+in_file=./data/output/*/*.tfrecord
 out_dir=./data/engwiki.1m-step
 rm -rf ${out_dir}
 cfg_file=./data/bert_config.json

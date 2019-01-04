@@ -27,14 +27,20 @@
   ```
 
 - create pretraining data
-```
-$ ./create_pretraining_data.bash
-```
+  - command
+  ```
+  $ ./create_pretraining_data.bash
+  ```
+  - info
+    - preprocess `output` files and convert to tf records
 
 - run pretraining
-```
-$ ./run_pretraining.bash
-```
+  - command
+  ```
+  $ ./run_pretraining.bash
+  ```
+  - info
+  ![](/data/loss.png)
 
 ----
 

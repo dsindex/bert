@@ -40,7 +40,10 @@
   $ ./run_pretraining.bash
   ```
   - info
-  ![](/data/loss.png)
+    - input files should be 'output/*/*.tfcord'
+    - 1M steps
+
+![](/data/loss.png)
 
 ----
 

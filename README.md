@@ -11,6 +11,7 @@
   - create_pretraining_data.bash
     - do_lower_case=True
   - run_pretraining.bash
+  - export.py
 
 ### How to train
 
@@ -41,7 +42,7 @@
   ```
   - info
     - input files should be 'output/*/*.tfcord'
-    - 1M steps
+    - 5M steps
 
 ![](/data/loss.png)
 

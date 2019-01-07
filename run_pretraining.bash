@@ -2,7 +2,7 @@
 set -e
 
 in_file=./data/output/*/*.tfrecord
-out_dir=./data/engwiki.1m-step
+out_dir=./data/engwiki.5m-step
 rm -rf ${out_dir}
 cfg_file=./data/bert_config.json
 python run_pretraining.py \
@@ -14,6 +14,6 @@ python run_pretraining.py \
     --train_batch_size=8 \
     --max_seq_length=128 \
     --max_predictions_per_seq=20 \
-    --num_train_steps=1000000 \
+    --num_train_steps=5000000 \
     --num_warmup_steps=10000 \
     --learning_rate=1e-4

@@ -48,7 +48,7 @@
 
 ### Download pre-trained word-based BERT
 
-- [engwiki.1m-step.uncased_L-12_H-768_A-12.tar](https://drive.google.com/open?id=1QzJ7MzwiJkaSRB-ZahDHOXI0ozFTeGb5)
+- [engwiki.1m-step.uncased_L-12_H-768_A-12.tar.gz](https://drive.google.com/open?id=1QzJ7MzwiJkaSRB-ZahDHOXI0ozFTeGb5)
 
 ----
 

@@ -3,6 +3,11 @@ set -e
 
 CDIR=$(readlink -f $(dirname $(readlink -f ${BASH_SOURCE[0]})))
 
+# for base, uncased
+do_lower_case='True'
+cp -rf ${CDIR}/data/vocab.txt.base ${CDIR}/data/vocab.txt
+
+
 vocab=${CDIR}/data/vocab.txt
 datadir=${CDIR}/data/output
 dirlist=`ls ${datadir}`
@@ -39,7 +44,7 @@ function create_data() {
                 --input_file=${in_file} \
                 --output_file=${out_file} \
                 --vocab_file=${vocab} \
-                --do_lower_case=True \
+                --do_lower_case=${do_lower_case} \
                 --max_seq_length=128 \
                 --max_predictions_per_seq=20 \
                 --masked_lm_prob=0.15 \

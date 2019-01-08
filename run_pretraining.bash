@@ -1,10 +1,18 @@
 #!/usr/bin/env bash
 set -e
 
-in_file=./data/output/*/*.tfrecord
-out_dir=./data/engwiki.5m-step
+CDIR=$(readlink -f $(dirname $(readlink -f ${BASH_SOURCE[0]})))
+
+# for base, uncased
+cp -rf ${CDIR}/data/bert_config.json.base ${CDIR}/data/bert_config.json
+
+
+in_file=${CDIR}/data/output/*/*.tfrecord
+out_dir=${CDIR}/data/engwiki.5m-step
 rm -rf ${out_dir}
-cfg_file=./data/bert_config.json
+cfg_file=${CDIR}/data/bert_config.json
+num_train_steps=5000000
+
 python run_pretraining.py \
     --input_file=${in_file} \
     --output_dir=${out_dir} \
@@ -14,6 +22,6 @@ python run_pretraining.py \
     --train_batch_size=8 \
     --max_seq_length=128 \
     --max_predictions_per_seq=20 \
-    --num_train_steps=5000000 \
+    --num_train_steps=${num_train_steps} \
     --num_warmup_steps=10000 \
     --learning_rate=1e-4

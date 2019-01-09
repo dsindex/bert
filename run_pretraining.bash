@@ -3,7 +3,7 @@ set -e
 
 CDIR=$(readlink -f $(dirname $(readlink -f ${BASH_SOURCE[0]})))
 
-# for base, uncased
+# for base
 cp -rf ${CDIR}/data/bert_config.json.base ${CDIR}/data/bert_config.json
 
 

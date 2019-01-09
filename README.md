@@ -5,8 +5,7 @@
 - modify tokenization.py
   - whitespace tokenization only
   - exception handling for convert_by_vocab()
-- prepare vocab.txt from glove.6B.300d.txt (glove vectors)
-  - lowercased(==uncased)
+- prepare vocab.txt.uncased, vocab.txt.cased from glove.6B.300d.txt, glove.840B.300d.txt (glove vectors)
 - add scripts
   - create_pretraining_data.bash
     - do_lower_case=True

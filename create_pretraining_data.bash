@@ -3,7 +3,7 @@ set -e
 
 CDIR=$(readlink -f $(dirname $(readlink -f ${BASH_SOURCE[0]})))
 
-# for base, uncased
+# for uncased
 do_lower_case='False'
 cp -rf ${CDIR}/data/vocab.txt.uncased ${CDIR}/data/vocab.txt
 

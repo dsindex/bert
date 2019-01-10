@@ -138,9 +138,11 @@ def convert_by_vocab(vocab, items, mode='to_id'):
   output = []
   for item in items:
     if mode == 'to_id':
-        if item not in vocab: item = '[UNK]'
+        if item not in vocab:
+            item = '[UNK]'
     if mode == 'to_token':
-        if item not in vocab: item = 102 # [UNK]
+        if item not in vocab:
+            item = 100 # [UNK]
     output.append(vocab[item])
   return output
 

@@ -3,8 +3,11 @@ set -e
 
 CDIR=$(readlink -f $(dirname $(readlink -f ${BASH_SOURCE[0]})))
 
-# for base
-cp -rf ${CDIR}/data/bert_config.json.base ${CDIR}/data/bert_config.json
+# for base, uncased
+cp -rf ${CDIR}/data/bert_config.json.base.uncased ${CDIR}/data/bert_config.json
+
+# for base, cased
+#cp -rf ${CDIR}/data/bert_config.json.base.cased ${CDIR}/data/bert_config.json
 
 
 in_file=${CDIR}/data/output/*/*.tfrecord

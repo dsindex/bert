@@ -7,11 +7,6 @@ CDIR=$(readlink -f $(dirname $(readlink -f ${BASH_SOURCE[0]})))
 do_lower_case='True'
 cp -rf ${CDIR}/data/vocab.txt.uncased ${CDIR}/data/vocab.txt
 
-# for cased
-#do_lower_case='False'
-#cp -rf ${CDIR}/data/vocab.txt.cased ${CDIR}/data/vocab.txt
-
-
 vocab=${CDIR}/data/vocab.txt
 datadir=${CDIR}/data/output
 dirlist=`ls ${datadir}`
